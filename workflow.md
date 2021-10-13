@@ -7,7 +7,7 @@ nav_order: 3
 # Workflow
 
 These patterns are designed to be composed of multiple components, and for those components to be used in gitops
-workflows by consumers and contributors.  To use the first pattern as an example, we maintain the [Industrial Edge][industrial-edge] pattern, which uses a [repo][https://github.com/hybrid-cloud-patterns/industrial-edge] with pattern-specific logic and configuration as well as a [common repo][https://github.com/hybrid-cloud-patterns/common] which has elements common to multiple patterns.  The common repo is included in each pattern repo as a submodule.  This allows
+workflows by consumers and contributors.  To use the first pattern as an example, we maintain the [Industrial Edge][industrial-edge] pattern, which uses a [repo][https://github.com/redhat-gitops-patterns/industrial-edge] with pattern-specific logic and configuration as well as a [common repo][https://github.com/hybrid-cloud-patterns/common] which has elements common to multiple patterns.  The common repo is included in each pattern repo as a submodule.  This allows
 consumers of the pattern flexibility to in both repos, or neither, as it suits their needs.
 
 ## Consuming a pattern 
@@ -46,11 +46,11 @@ workflows) and will be easier to make upstream, if you wish.  Contributions from
 1. Customizations to `values-global.yaml` and other files that are particular to your installation
 1. Commits made by Tekton and other automated processes that will be particular to your installation
 
-To isolate changes for upstreaming (`hcp` is "Hybrid Cloud Patterns", you can use a different remote and/or branch name
+To isolate changes for upstreaming (`hcp` is "Red Hat GitOps Patterns", you can use a different remote and/or branch name
 if you want):
 
    ```
-   git remote add hcp https://github.com/hybrid-cloud-patterns/industrial-edge
+   git remote add hcp https://github.com/redhat-gitops-patterns/industrial-edge
    git fetch --all
    git branch -b hcp-main -t hcp/main
    <make changes on the hcp-main branch>

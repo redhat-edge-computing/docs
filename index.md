@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Hybrid Cloud Patterns
+title: Red Hat GitOps Patterns
 nav_order: 1
 ---
 
-# Hybrid Cloud Patterns
+# Red Hat GitOps Patterns
 
-Hybrid Cloud Patterns are a natural progression from reference architectures with additional value.
+Red Hat GitOps Patterns are a natural progression from reference architectures with additional value.
 
 This effort is focused on customer solutions that involve multiple Red Hat
 products. The patterns include one or more appications that are based on successfully deployed customer examples. Example application code is provided as a demonstration along with the various open source projects and Red Hat products required to for the deployment to work. Users can then modify the pattern for their own specific application.
