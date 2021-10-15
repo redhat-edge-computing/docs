@@ -6,13 +6,13 @@ nav_order: 9
 
 # FAQ
 
-## What is a Hybrid Cloud Pattern?
+## What is a Red Hat GitOps Pattern?
 
 Red Hat GitOps Patterns are collections of applications (in the ArgoCD sense) that demonstrate aspects of hub/edge computing that seem interesting and useful.  Red Hat GitOps Patterns will generall have a hub or centralized component, and an edge component.  These will interact in different ways.
 
 Many things have changed in the IT landscape in the last few years - containers and kubernetes have taken the industry by storm, but they introduce many technologies and concepts.  It is not always clear how these technologies and concepts play together - and Red Hat GitOps Patterns is our effort to show these technologies working together on non-trivial applications in ways that make sense for real customers and partners to use.
 
-The first Hybrid Cloud Pattern is based on [MANUela](https://github.com/sa-mw-dach/manuela), an application developed by Red Hat field associates.  This application highlights some interesting aspects of the industrial edge in a cloud-native world - the hub component features pipelines to build the application, a "twin" for testing purposes, a central data lake, an s3 component to gather data from the edge installations (which are factories in this case).  The edge component has machine sensors, which are responsible for only gathering data from instrumented line devices and shares them via MQTT messaging.  The edge also features Seldon, an AI/ML framework for making predictions, a custom NodeJS application to show data in real time, and messaging components supporting both MQTT and Kafka protocols.  The local applications use MQTT to retrieve data for display, and the Kafka components move the data to the central hub for storage and analysis.
+The first Red Hat GitOps Pattern is based on [MANUela](https://github.com/sa-mw-dach/manuela), an application developed by Red Hat field associates.  This application highlights some interesting aspects of the industrial edge in a cloud-native world - the hub component features pipelines to build the application, a "twin" for testing purposes, a central data lake, an s3 component to gather data from the edge installations (which are factories in this case).  The edge component has machine sensors, which are responsible for only gathering data from instrumented line devices and shares them via MQTT messaging.  The edge also features Seldon, an AI/ML framework for making predictions, a custom NodeJS application to show data in real time, and messaging components supporting both MQTT and Kafka protocols.  The local applications use MQTT to retrieve data for display, and the Kafka components move the data to the central hub for storage and analysis.
 
 We are actively developing new Red Hat GitOps Patterns.  Watch this space for updates!
 
