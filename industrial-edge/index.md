@@ -88,7 +88,7 @@ While the above diagrams show the components involved on the DevOps side dealing
 ## Initial Deployment
 
 Follow the instructions in the [Git
-repo](https://github.com/redhat-gitops-patterns/industrial-edge/#how-to-use)
+repo](https://github.com/redhat-edge-computing/industrial-edge/#how-to-use)
 containing the complete configuration.
 
 ### Pattern Structure
