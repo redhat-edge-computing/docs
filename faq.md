@@ -37,7 +37,7 @@ In the future, we expect to further use Red Hat OpenShift, and expand the integr
 
 ## How are they structured?
 
-Red Hat GitOps Patterns come in parts - we have a [common](https://github.com/hybrid-cloud-patterns/common) repo with logic that will apply to multiple patterns.  Layered on top of that is our first pattern - [industrial edge](https://github.com/redhat-gitops-patterns/industrial-edge).  This layout allows for individual applications within a pattern to be swapped out by pointing to different repositories or branches for those individual components by customizing the values files in the root of the repository to point to different branches or forks or even different repos entirely. (At present, the repos all have to be on github.com and accessible with the same token.)
+Red Hat GitOps Patterns come in parts - we have a [common](https://github.com/hybrid-cloud-patterns/common) repo with logic that will apply to multiple patterns.  Layered on top of that is our first pattern - [industrial edge](https://github.com/redhat-edge-computing/industrial-edge).  This layout allows for individual applications within a pattern to be swapped out by pointing to different repositories or branches for those individual components by customizing the values files in the root of the repository to point to different branches or forks or even different repos entirely. (At present, the repos all have to be on github.com and accessible with the same token.)
 
 The common repo is primarily concerned with how to deploy the GitOps operator, and to create the namespaces that will be necessary to manage the pattern applications.
 

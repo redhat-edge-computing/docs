@@ -130,5 +130,5 @@ Check all OpenShift GitOps applications are synchronised
 ## Uninstalling
 
 Follow the instructions in the [Git
-repo](https://github.com/redhat-gitops-patterns/industrial-edge#uninstalling)
+repo](https://github.com/redhat-edge-computing/industrial-edge#uninstalling)
 containing the complete configuration.
