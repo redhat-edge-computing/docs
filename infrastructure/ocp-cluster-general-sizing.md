@@ -1,8 +1,7 @@
 ---
 layout: default
 title: OpenShift General Sizing
-grand_parent: Patterns
-parent: Industrial Edge
+parent: Infrastructure
 nav_order: 1
 ---
 
@@ -37,7 +36,7 @@ kubeletConfig:
 
 Setting  **podsPerCore**  to  `0`  disables this limit. The default is  `0`.  **podsPerCore**  cannot exceed  `maxPods`.
 
-** maxPods**  sets the number of pods the node can run to a fixed value, regardless of the properties of the node.
+**maxPods**  sets the number of pods the node can run to a fixed value, regardless of the properties of the node.
 
 ```
  kubeletConfig:

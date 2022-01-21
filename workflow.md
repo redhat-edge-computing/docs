@@ -1,24 +1,22 @@
 ---
 layout: default
 title: Workflow
-nav_order: 3
+nav_order: 4
 ---
 
 # Workflow
 
 These patterns are designed to be composed of multiple components, and for those components to be used in gitops
-workflows by consumers and contributors.  To use the first pattern as an example, we maintain the [Industrial Edge][industrial-edge] pattern, which uses a [repo][https://github.com/redhat-edge-computing/industrial-edge] with pattern-specific logic and configuration as well as a [common repo][https://github.com/hybrid-cloud-patterns/common] which has elements common to multiple patterns.  The common repo is included in each pattern repo as a submodule.  This allows
+workflows by consumers and contributors.  To use the first pattern as an example, we maintain the [Industrial Edge](industrial-edge) pattern, which uses a [repo](https://github.com/redhat-edge-computing/industrial-edge) with pattern-specific logic and configuration as well as a [common repo](https://github.com/hybrid-cloud-patterns/common) which has elements common to multiple patterns.  The common repo is included in each pattern repo as a submodule.  This allows
 consumers of the pattern flexibility to in both repos, or neither, as it suits their needs.
 
 ## Consuming a pattern 
 
-* Fork the pattern into your namespace
-
-1. Fork the pattern repo on GitHub. It is necessary to fork because your fork will be updated as part of the GitOps and DevOps processes, and the main branch (by default) will be used in the automated workflows.
+1. Fork the pattern repo on GitHub to your workspace (GitHub user or organization). It is necessary to fork because your fork will be updated as part of the GitOps and DevOps processes, and the main branch (by default) will be used in the automated workflows.
 
 1. Clone the forked copy
 
-   `git clone --recurse-submodules git@github.com:your-username/industrial-edge.git`
+   `git clone --recurse-submodules git@github.com:<your-workspace>/industrial-edge.git`
 
 1. Create a local copy of the Helm values file that can safely include credentials
 

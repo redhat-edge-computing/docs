@@ -1,14 +1,16 @@
 remote_theme: pmarsceill/just-the-docs
+#theme: just-the-docs
 
 title: Red Hat Gitops Patterns
 description: It's patterns all the way down
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://redhat-gitops-patterns.io" # the base hostname & protocol for your site, e.g. http://example.com
-
 logo: images/Logo-RedHat-Hat-Color-RGB.png
 
 permalink: pretty
 exclude: [ "node_modules/", "*.gemspec", "cheat.md", "LICENSE.txt", "README.md" ]
+
+color_scheme: patterns
 
 # Enable or disable heading anchors
 heading_anchors: true
@@ -27,5 +29,52 @@ gh_edit_view_mode: "blob" # "tree" or "edit" if you want the user to jump into t
 
 
 aux_links:
-  "Images":
-    - "https://quay.io/organization/hybridcloudpatterns"
+  "Community Patterns":
+    - "https://hybrid-cloud-patterns.io"
+#  "Blog":
+#    - "/blog"
+
+## Blog
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+
+#permalink: /blog/:year/:day/:title #/:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /blog/page:num/
+timezone: Australia/Melbourne # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+words_per_minute: 200
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      header:
+        overlay_image: blue-yellow-banner-thin.jpg
+        caption: "Photo credit: [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
+      sidebar:
+        tagcloud: true

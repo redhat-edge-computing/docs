@@ -3,7 +3,7 @@ layout: default
 title: Factory Sites
 grand_parent: Patterns
 parent: Industrial Edge
-nav_order: 3
+nav_order: 2
 ---
 
 # Having a factory (edge) cluster join the datacenter (hub) 
@@ -19,7 +19,7 @@ nav_order: 3
 
 By default the `factory` applications are deployed on all clusters that ACM knows about.
 
-```
+```json
   managedSites:
   - name: factory
     clusterSelector:
@@ -35,7 +35,7 @@ This is useful for cost-effective demos, but is hardly realistic.
 To deploy the `factory` applications only on managed clusters with the label
 `site=factory`, change the site definition in `values-datacenter.yaml` to:
 
-```
+```json
   managedSites:
   - name: factory
     clusterSelector:
@@ -67,11 +67,11 @@ There are a three ways to join the factory to the datacenter.
 
 ![](/images/import-cluster.png "Select Import cluster")
 
-3. On the "Import an existing cluster" page, enter the cluster name and choose Kubeconfig as the "import mode". After pressiming import you will be asked to copy a command that will be used on the factory cluster.
+3. On the "Import an existing cluster" page, enter the cluster name and choose Kubeconfig as the "import mode". Add the tag `site=factory` Press import. Done.
 
 ![](/images/import-with-kubeconfig.png "Import using kubeconfig")
 
-Skip to the section [Factory is joined](#factory-is-joined)
+Using this menthod, you are done. Skip to the section [Factory is joined](#factory-is-joined) but ignore the part about adding the site tag.
 
 ## Factory setup using `cm` tool
 
@@ -82,7 +82,7 @@ Skip to the section [Factory is joined](#factory-is-joined)
 1. On the command line login into the hub/datacenter cluster (use `oc login` or export the KUBECONFIG).
 
 1. Run the following command:
-```
+```sh
 cm attach cluster --cluster <cluster-name> --cluster-kubeconfig <path-to-KUBECONFIG>
 ``` 
 
@@ -118,7 +118,7 @@ Skip to the next section, [Factory is joined](#factory-is-joined)
 ### Designate the new cluster as a factory site
 
 Now that ACM is no longer deploying the factory applications everywhere, we need 
-to explicitly indicate that the new cluster has the factory role.
+to explicitly indicate that the new cluster has the factory role. If you haven't tagged the cluster as `site=managed-cluster` then we can that here.
 
 We do this by adding the label referenced in the managedSite's `clusterSelector`.
 
@@ -131,4 +131,8 @@ We do this by adding the label referenced in the managedSite's `clusterSelector`
    `oc label managedclusters.cluster.open-cluster-management.io/YOURCLUSTER site=factory`
 
 ### You're done
-That's it! Go to your factory (edge) OpenShift console and check for the open-cluster-management-agent pod being launched. Be patient, it will take a while for the ACm agent and agent-addons to launch. After that, the operator OpenShifdt GitOps will run. When it's finished coming up launch the OpenShift GitOps (ArgoCD) console from the top right of the OpenShift console. 
+That's it! Go to your factory (edge) OpenShift console and check for the open-cluster-management-agent pod being launched. Be patient, it will take a while for the ACM agent and agent-addons to launch. After that, the operator OpenShifdt GitOps will run. When it's finished coming up launch the OpenShift GitOps (ArgoCD) console from the top right of the OpenShift console. 
+
+## Next up
+
+Work your way through the Industrial Edge 2.0 [GitOps/DevOps demos](application)
