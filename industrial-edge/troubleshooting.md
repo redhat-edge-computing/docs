@@ -57,7 +57,7 @@ The industrial edge pattern runs two post-install operations after creating the 
 
 __Extracting the secret from the datacenter ArgoCD instance for use in the Pipelines__
 
-This depends on the installation of both the cluster-wide GitOps operator, and the installation of an instance in the datacenter namespace.  The logic is controlled [here](https://github.com/redhat-edge-computing/industrial-edge/blob/main/Makefile) (where the parameters are set) and [here](https://github.com/hybrid-cloud-patterns/common/blob/main/Makefile), which does the interactions with the cluster (to extract the secret and create a resource in manuela-ci).
+This depends on the installation of both the cluster-wide GitOps operator, and the installation of an instance in the datacenter namespace.  The logic is controlled [here](https://github.com/hybrid-cloud-patterns/industrial-edge/blob/main/Makefile) (where the parameters are set) and [here](https://github.com/hybrid-cloud-patterns/common/blob/main/Makefile), which does the interactions with the cluster (to extract the secret and create a resource in manuela-ci).
 
 This task runs first, and if it does not complete, the seed pipeline will not start either.  Things to check:
 
@@ -93,9 +93,9 @@ In general, use the project-supplied `global.options.UseCSV` setting of `False`.
 ### Pipeline Failures
 
 #### Symptom: "User not found" error in first stage of pipeline run
-**Cause:** Despite the message, the error is most likely that you don't have a fork of [manuela-dev](https://github.com/redhat-edge-computing/manuela-dev).
+**Cause:** Despite the message, the error is most likely that you don't have a fork of [manuela-dev](https://github.com/hybrid-cloud-patterns/manuela-dev).
 
-**Resolution:** Fork [manuela-dev](https://github.com/redhat-edge-computing/manuela-dev) into your namespace in GitHub and run `make seed`.
+**Resolution:** Fork [manuela-dev](https://github.com/hybrid-cloud-patterns/manuela-dev) into your namespace in GitHub and run `make seed`.
 
 #### Symptom: Intermittent failures in Pipeline stages.  Some sample errors:
 
