@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Red Hat GitOps Patterns
+title: Red Hat Validated Patterns
 nav_order: 1
 ---
 
-# Red Hat GitOps Patterns
+# Red Hat Validated Patterns
 
-Red Hat GitOps Patterns are a natural progression from reference architectures with additional value.
+Red Hat Validated Patterns are a natural progression from reference architectures with additional value.
 
 This effort is focused on customer solutions that involve multiple Red Hat
 products. The patterns include one or more applications that are based on successfully deployed customer examples. Example application code is provided as a demonstration along with the various open source projects and Red Hat products required to for the deployment to work. Users can then modify the pattern for their own specific application.

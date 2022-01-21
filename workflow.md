@@ -44,7 +44,7 @@ workflows) and will be easier to make upstream, if you wish.  Contributions from
 1. Customizations to `values-global.yaml` and other files that are particular to your installation
 1. Commits made by Tekton and other automated processes that will be particular to your installation
 
-To isolate changes for upstreaming (`hcp` is "Red Hat GitOps Patterns", you can use a different remote and/or branch name
+To isolate changes for upstreaming (`hcp` is "Red Hat Validated Patterns", you can use a different remote and/or branch name
 if you want):
 
    ```
