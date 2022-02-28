@@ -37,7 +37,7 @@ The pattern is derived from work done by the [Red Hat Portfolio Architecture tea
 ### Red Hat Technologies
 
 - Red Hat OpenShift Container Platform (Kubernetes++)
-- Red Hat Advanced Cluster Management (Open Clutser Management)
+- Red Hat Advanced Cluster Management (Open Cluster Management)
 - Red Hat OpenShift GitOps (ArgoCD)
 - Hasicorp Vault
 - [TBD]
