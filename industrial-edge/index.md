@@ -46,7 +46,7 @@ industrial setting, using AI/ML. It could be easily extended to other use cases,
 ### Red Hat Technologies
 
 - Red Hat OpenShift Container Platform (Kubernetes++)
-- Red Hat Advanced Cluster Management (Open Clutser Management)
+- Red Hat Advanced Cluster Management (Open Cluster Management)
 - Red Hat OpenShift GitOps (ArgoCD)
 - Red Hat OpenShift Pipelines (Tekton)
 - Red Hat Quay (Container image registry)
