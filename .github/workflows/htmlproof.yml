@@ -29,6 +29,7 @@ jobs:
       - uses: anishathalye/proof-html@v1
         with:
           directory: ./_site
+          arguments: --allow-missing-href
           enforce_https: true
           check_favicon: false
           tokens: |
