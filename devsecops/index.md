@@ -4,6 +4,7 @@ title: Secure Supply Chain
 parent: Patterns
 has_children: true
 nav_order: 5
+published: false
 ---
 
 {% comment %}
