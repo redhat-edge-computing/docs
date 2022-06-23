@@ -100,7 +100,7 @@ The diagram below shows the components that are deployed with the the data flows
 ## What Next
 
 - Getting started [deploy the management hub using Helm and GitOps](getting-started)
-- Add a managed cluster to [deploy the  managed cluster piece using ACM](/multicloud-gitops/managed cluster)
+- Add a managed cluster to [deploy the managed cluster piece using ACM](/multicloud-gitops/managed-cluster)
 - Read the [datasheet](https://www.redhat.com/en/resources/validated-pattern-for-healthcare-overview)
 - Review the [blog post](https://content.cloud.redhat.com/blog/how-to-build-a-medical-ai/ml-application-on-kubernetes)
 - Visit the [repo](https://github.com/hybrid-cloud-patterns/medical-diagnosis)
