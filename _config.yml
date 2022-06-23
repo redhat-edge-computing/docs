@@ -4,7 +4,7 @@ remote_theme: pmarsceill/just-the-docs
 title: Red Hat Validated Patterns
 description: It's patterns all the way down
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://redhat-gitops-patterns.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://redhat-gitops-patterns.io" # the base hostname & protocol for your site, e.g. http://example.com
 logo: images/Logo-RedHat-Hat-Color-RGB.png
 
 permalink: pretty
