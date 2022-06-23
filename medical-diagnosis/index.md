@@ -36,10 +36,11 @@ and cluster configuration. Using GitOps provides a much more efficient means of 
 
 The Validated Pattern includes:
 
-- Ingest chest Xrays into an object store based on Ceph.
-- The Object store sends notifications to a Kafka topic.
-- A KNative Eventing Listener to the topic triggers a KNative Serving function.
-- An ML-trained model running in a container makes a risk of Pneumonia assessment for incoming images.
+- Ingest chest Xrays into an object store based on Red Hat Ceph Storage.
+- The Object store sends object bucket notifications to a Kafka topic in Red Hat AMQ.
+- A KNative Eventing Listener to the topic triggers a KNative Serving function in Red Hat OpenShift Serverless.
+- An ML-trained model running in a container makes a determination of risk of Pneumonia assessment for incoming images.
+- A Grafana dashboard displays the pipeline in real time, along with images incoming, processed and anonymized, as well as full metrics.
 - A Grafana dashboard displays the pipeline in real time, along with images incoming, processed and anonymized, as well as full metrics.
 
 This pipeline is showcased [in this video](https://www.youtube.com/watch?v=zja83FVsm14).
@@ -63,8 +64,7 @@ please contact [Jonny Rickard](mailto:jrickard@redhat.com) or [Lester Claudio](m
 - Red Hat Quay (Container image registry)
 - Red Hat AMQ Streams (Apache Kafka Event Broker)
 - Grafana dashboard (OpenShift Grafana Operator)
-- Open Data Hub
-- S3 storage
+- Red Hat Ceph Storage (S3 storage)
 
 ## Architecture
 
@@ -72,7 +72,7 @@ At a high level this requires a management hub, for the applications and GitOps 
 
 [![Multi-Cloud Architecture](/images/medical-edge/edge-medical-diagnosis-marketing-slide.png)](/images/medical-edge/edge-medical-diagnosis-marketing-slide.png)
 
-Components are running on OpenShift either at the data center or at the medical facility (or public cloud running OpenShift).
+Components are running on Red Hat OpenShift either at the data center or at the medical facility (or public cloud running Red Hat OpenShift).
 
 ### Logical Diagram
 
@@ -99,6 +99,8 @@ The diagram below shows the components that are deployed with the the data flows
 
 ## What Next
 
-- Getting started [deploy the management hub using Helm and GitOps](getting-started)
-- Add a managed cluster to [deploy the  managed cluster piece using ACM](/multicloud-gitops/managed-cluster)
-- Visit the [repository](https://github.com/hybrid-cloud-patterns/medical-diagnosis)
+- Getting started [deploy the management hub using Helm and GitOps](getting-started) 
+- Add a managed cluster to [deploy the  managed cluster piece using ACM](/multicloud-gitops/managed cluster)
+- Read the [datasheet](https://www.redhat.com/en/resources/validated-pattern-for-healthcare-overview)
+- Review the [blog post] (http://content.cloud.redhat.com/blog/how-to-build-a-medical-ai/ml-application-on-kubernetes)  
+- Visit the [repo](https://github.com/hybrid-cloud-patterns/medical-diagnosis)  
