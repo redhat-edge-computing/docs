@@ -51,4 +51,4 @@ When the cluster is imported, ACM on the datacenter will deploy an ACM agent and
 
 ## OpenShift GitOps (a.k.a ArgoCD)
 
-When OpenShift GitOps is deployed and running in a cluster (datacenter or edge) you can launch it's console by  choosing ArgoCD in the upper left part of the OpenShift Console (TO-DO whenry to add an image and clearer instructions here)  
+When OpenShift GitOps is deployed and running in a cluster (datacenter or edge) you can launch it's console by  choosing ArgoCD in the upper left part of the OpenShift Console (TO-DO whenry to add an image and clearer instructions here)
