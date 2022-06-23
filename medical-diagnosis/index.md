@@ -11,20 +11,23 @@ nav_order: 3
 </div>
 
 # Medical Diagnosis
+
 {: .no_toc }
 
-<a href="getting-started" class="btn" style="background-color:green;"> Install </a>
-<a href="https://groups.google.com/u/1/g/hybrid-cloud-patterns" class="btn"> Help & Feedback </a>
-<a href="https://github.com/hybrid-cloud-patterns/medical-diagnosis/issues" class="btn" style="background-color:red;"> Report Bugs </a>
+[Install](/medical-diagnosis/getting-started){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Help & Feedback](https://groups.google.com/g/hybrid-cloud-patterns){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Report Bugs](https://github.com/hybrid-cloud-patterns/medical-diagnosis/issues){: .btn .btn-red .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ## Table of contents
+
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
 
 ## Background
-This Validated Pattern is based on a demo implemetation of an automated data pipeline for chest Xray
+
+This Validated Pattern is based on a demo implementation of an automated data pipeline for chest Xray
 analysis previously developed by Red Hat.  The original demo can be found [here](https://github.com/red-hat-data-services/jumpstart-library). It was developed for the US Department of Veteran Affairs.
 
 This validated pattern includes the same functionality as the original demonstration. The difference is
@@ -33,19 +36,19 @@ and cluster configuration. Using GitOps provides a much more efficient means of 
 
 The Validated Pattern includes:
 
-* Ingest chest Xrays into an object store based on Red Hat Ceph Storage.
-* The Object store sends object bucket notifications to a Kafka topic in Red Hat AMQ.
-* A KNative Eventing Listener to the topic triggers a KNative Serving function in Red Hat OpenShift Serverless.
-* An ML-trained model running in a container makes a determination of risk of Pneumonia assessment for incoming images.
-* A Grafana dashboard displays the pipeline in real time, along with images incoming, processed and anonymized, as well as full metrics.
+- Ingest chest Xrays into an object store based on Red Hat Ceph Storage.
+- The Object store sends object bucket notifications to a Kafka topic in Red Hat AMQ.
+- A KNative Eventing Listener to the topic triggers a KNative Serving function in Red Hat OpenShift Serverless.
+- An ML-trained model running in a container makes a determination of risk of Pneumonia assessment for incoming images.
+- A Grafana dashboard displays the pipeline in real time, along with images incoming, processed and anonymized, as well as full metrics.
+- A Grafana dashboard displays the pipeline in real time, along with images incoming, processed and anonymized, as well as full metrics.
 
 This pipeline is showcased [in this video](https://www.youtube.com/watch?v=zja83FVsm14).
 
 [![Pipeline dashboard](/images/medical-edge/dashboard.png)](/images/medical-edge/dashboard.png)
 
-
 This validated pattern is still being developed.  More to come in the next few weeks. Any questions or concerns
-please contact [Jonny Rickard](jrickard@redhat.com) or [Lester Claudio](claudiol@redhat.com).
+please contact [Jonny Rickard](mailto:jrickard@redhat.com) or [Lester Claudio](mailto:claudiol@redhat.com).
 
 ### Solution elements
 
@@ -55,7 +58,7 @@ please contact [Jonny Rickard](jrickard@redhat.com) or [Lester Claudio](claudiol
 
 ### Red Hat Technologies
 
-- Red Hat OpenShift Container Platform (Kubernetes++)
+- Red Hat OpenShift Container Platform (Kubernetes)
 - Red Hat Advanced Cluster Management (Open Cluster Management)
 - Red Hat OpenShift GitOps (ArgoCD)
 - Red Hat Quay (Container image registry)
@@ -64,6 +67,7 @@ please contact [Jonny Rickard](jrickard@redhat.com) or [Lester Claudio](claudiol
 - Red Hat Ceph Storage (S3 storage)
 
 ## Architecture
+
 At a high level this requires a management hub, for the applications and GitOps management, and infrastructure that extends to more than one managed clusters running for medical facilities on private or public clouds.
 
 [![Multi-Cloud Architecture](/images/medical-edge/edge-medical-diagnosis-marketing-slide.png)](/images/medical-edge/edge-medical-diagnosis-marketing-slide.png)
@@ -79,7 +83,7 @@ In the Medical Diagnosis architecture there are two logical sites.
 
 [![Multi-Cloud Logical Architecture](/images/medical-edge/logical-diagram.png)](/images/medical-edge/logical-diagram.png)
 
-### Physical Schema 
+### Physical Schema
 
 The diagram below shows the components that are deployed with the various networks that connect them.
 
@@ -94,8 +98,9 @@ The diagram below shows the components that are deployed with the the data flows
 [![Demo](/videos/xray-deployment.svg)](/videos/xray-deployment.svg)
 
 ## What Next
+
 - Getting started [deploy the management hub using Helm and GitOps](getting-started) 
-- Add a managed cluster to [deploy the  managed cluster piece using ACM](managed cluster)
+- Add a managed cluster to [deploy the  managed cluster piece using ACM](/multicloud-gitops/managed cluster)
 - Read the [datasheet](https://www.redhat.com/en/resources/validated-pattern-for-healthcare-overview)
 - Review the [blog post] (http://content.cloud.redhat.com/blog/how-to-build-a-medical-ai/ml-application-on-kubernetes)  
 - Visit the [repo](https://github.com/hybrid-cloud-patterns/medical-diagnosis)  
