@@ -8,9 +8,12 @@ url: "http://redhat-gitops-patterns.io" # the base hostname & protocol for your 
 logo: images/Logo-RedHat-Hat-Color-RGB.png
 
 permalink: pretty
-exclude: [ "node_modules/", "*.gemspec", "cheat.md", "LICENSE.txt", "README.md" ]
+exclude: [ "node_modules/", "*.gemspec", "cheat.md", "LICENSE.txt", "README.md", vendor ]
 
 color_scheme: patterns
+
+kramdown:
+  auto_ids: true
 
 # Enable or disable heading anchors
 heading_anchors: true
@@ -75,6 +78,6 @@ defaults:
       related: true
       header:
         overlay_image: blue-yellow-banner-thin.jpg
-        caption: "Photo credit: [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
+        caption: "Photo credit: [WeGraphics](https://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
       sidebar:
         tagcloud: true
