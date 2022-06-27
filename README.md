@@ -1,6 +1,6 @@
 # README
 
-This project contains the documentation for https://redhat-gitops-patterns.io/
+This project contains the documentation for [Red Hat GitOps Patterns](https://redhat-gitops-patterns.io/)
 
 The directory structure is pretty straightforward. The images dir are where images used in the documentation are loaded and referenced. Each validated pattern receives its own directory that includes an index.md file and any other files needed to explain the pattern.
 
