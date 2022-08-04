@@ -90,7 +90,7 @@ In the Industrial Edge architecture there are two logical types of sites.
 - The datacenter. This is where the data scientist, developers and operations personnel apply the changes to their models, application code and configurations.
 - The factories. This is where new applications, updates and operational changes are deployed to improve quality and efficiency in the factory.
 
-For logical, physical and dataflow diagrams, please see excellent work done by the [Red Hat Portfolio Architecture team](https://gitlab.com/redhatdemocentral/portfolio-architecture-examples/-/blob/main/manufacturing.adoc)
+For logical, physical and dataflow diagrams, please see excellent work done by the [Red Hat Portfolio Architecture team](https://gitlab.com/osspa/portfolio-architecture-examples/-/blob/main/industrial-edge.adoc)
 
 ### Pattern Structure
 
