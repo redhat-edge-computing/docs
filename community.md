@@ -3,6 +3,7 @@ layout: default
 title: Community Patterns
 nav_order: 3
 has_children: false
+published: false
 ---
 
 # Community Patterns
