@@ -50,7 +50,7 @@ This pattern uses OpenShift Virtualization (the productization of Kubevirt) to s
 
 - Hashicorp Vault
 - External Secrets Operator
-- Ignition
+- Inductive Automation Ignition
 
 ## Architecture
 
@@ -68,6 +68,14 @@ TBD
 
 TBD
 
+## Other Presentations Featuring this Pattern
+
+### Registration Required
+
+[![Ansible-Automates-June-2022-Deck](/images/ansible-edge-gitops/automates-june-2022-deck-thumb.png)](https://tracks.redhat.com/c/validated-patterns_i?x=5wCWYS&lx=lT1ZfK)
+
+[![Ansible-Automates-June-2022-Video](/images/ansible-edge-gitops/automates-june-2022-video-thumb.png)](https://tracks.redhat.com/c/preview-42?x=5wCWYS&lx=lT1ZfK)
+
 ## What Next
 
-- [Deploy the management hub](getting-started)  using Helm
+- [Getting Started: Deploying and Validating the Pattern](getting-started)

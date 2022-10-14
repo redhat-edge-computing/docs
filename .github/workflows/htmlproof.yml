@@ -4,10 +4,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.x
+          ruby-version: 3.0.4
+          bundler-cache: true
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
@@ -15,14 +16,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       - run: |
-          {
-            echo "source 'https://rubygems.org'"
-            echo "gem 'jekyll'"
-            echo "gem 'bundler'"
-            echo "gem 'jekyll-paginate'"
-            echo "gem 'just-the-docs'"
-            echo "gem 'github-pages'"
-          } > Gemfile
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
       - run: bundle exec jekyll build
@@ -38,3 +31,8 @@ jobs:
             https://en.wikipedia.org/wiki/Main_Page
           url_ignore_re: |
             ^https://twitter.com/
+            ^https://hybrid-cloud-patterns.io//2022/
+            ^https://hybrid-cloud-patterns.io/2022/
+            ^https://hybrid-cloud-patterns.io//blog/
+            ^https://hybrid-cloud-patterns.io/blog/
+            ^https://github.com/hybrid-cloud-patterns/docs/blob/gh-pages

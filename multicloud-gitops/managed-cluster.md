@@ -37,23 +37,28 @@ The above yaml segment will deploy the `clusterGroup` applications on managed cl
 
 ```yaml
   namespaces:
-    - multicloud-gitops-region-one
-    - ansible-automation-platform
-
-  subscriptions:
-    - name: ansible-automation-platform-operator
-      namespace: ansible-automation-platform
-      channel: stable-2.1
-      csv: aap-operator.v2.1.0-0.1639138915
-
+    - config-demo
 
   projects:
-    - ansible-automation-platform
+    - config-demo
 
   applications:
-    - name: ansible
-      project: ansible-automation-platform
-      path: region/aap
+    config-demo:
+      name: config-demo
+      namespace: config-demo
+      project: config-demo
+      path: charts/all/config-demo
+
+  #Subscriptions can be added too - multicloud-gitops at present does not require subscriptions on its managed clusters
+  #subscriptions:
+  #  example-subscription:
+  #    name: example-operator
+  #    namespace: example-namespace
+  #    channel: example-channel
+  #    csv: example-operator.v1.0.0
+
+  subscriptions:
+
 ```
 
 Remember to commit the changes and push to GitHub so that GitOps can see
@@ -144,11 +149,11 @@ We do this by adding the label referenced in the managedSite's `clusterSelector`
 
 1. Find the new cluster
 
-   `oc get region-one.cluster.open-cluster-management.io`
+   `oc get managedcluster.cluster.open-cluster-management.io`
 
 1. Apply the label
 
-   `oc label region-one.cluster.open-cluster-management.io/YOURCLUSTER site=managed-cluster`
+   `oc label managedcluster.cluster.open-cluster-management.io/YOURCLUSTER site=managed-cluster`
 
 ### You're done
 
