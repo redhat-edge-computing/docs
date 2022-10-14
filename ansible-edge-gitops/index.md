@@ -4,7 +4,7 @@ title: Ansible Edge GitOps
 parent: Patterns
 has_children: true
 nav_order: 1
-published: false
+published: true
 ---
 
 <div class="pattern_logo">
