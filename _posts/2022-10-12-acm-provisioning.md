@@ -32,15 +32,19 @@ Let’s walk through an example using the Multi-Cloud GitOps pattern as an examp
 
 ## Preparation
 
-Start by [deploying](https://hybrid-cloud-patterns.io/multicloud-gitops/getting-started/) the Multi-cloud GitOps pattern on AWS.
-
 If you've never deployed OpenShift before, you could try [ROSA](https://cloud.redhat.com/learn/getting-started-red-hat-openshift-service-aws-rosa/deploy-rosa-cluster)
 the pay-as-you-go OpenShift managed service.
 
-Next, you'll need to create a fork of the
-https://github.com/hybrid-cloud-gitops/multicloud-gitops/ repo.  Go there in a
-browser, make sure you’re logged in to GitHub, click the “Fork” button, and
-confirm the destination by clicking the big green "Create fork" button.
+| Installing a validated pattern |
+| ------------------------------ |
+| [![Installing a validated pattern](https://img.youtube.com/vi/N6XPh-9XZAM/mqdefault.jpg "Installing a validated pattern")](https://youtu.be/N6XPh-9XZAM) |
+
+Start by [deploying](https://hybrid-cloud-patterns.io/multicloud-gitops/getting-started/) the Multi-cloud GitOps pattern on AWS.
+
+Next, you'll need to create a fork of the [multicloud-gitops](https://github.com/hybrid-cloud-patterns/multicloud-gitops/)
+repo.  Go there in a browser, make sure you’re logged in to GitHub, click the
+“Fork” button, and confirm the destination by clicking the big green "Create
+fork" button.
 
 Now you have a copy of the pattern that you can make changes to.  You can read
 more about the Multi-cloud GitOps pattern on our [community
@@ -68,17 +72,20 @@ credentials.  To do this you can either manually load the secrets into the
 vault via the UI, or make use of the following process for loading them from a
 machine you control.
 
+| Loading provisioning secrets |
+| ---------------------------- |
+| [![Loading provisioning secrets](https://img.youtube.com/vi/LSDUTfZvcyA/mqdefault.jpg "Loading provisioning secrets")](https://youtu.be/LSDUTfZvcyA) |
 
 First clone your fork of the repository onto your local machine, and copy the template to a location not controlled by Git (to avoid accidentally committing the contents)
 
-```
+```sh
 git clone git@github.com:{yourfork}/multicloud-gitops.git
 cp values-secret.yaml.template ~/values-secret.yaml
 ```
 
 You will need to uncomment and provide values for the following keys in order to make use of the provisioning functionality:
 
-```
+```yaml
 secrets:
   aws:                                       [1]
     access_key_id: AKIAIOSFODNN7EXAMPLE
@@ -89,29 +96,32 @@ files:
   openshiftPullSecret: ~/.dockerconfigjson   [3]
 ```
 
-_[1]_ A guide to finding the relevant AWS values can be found at
-https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html
+_[1]_ A guide to finding the relevant AWS values can be found [here](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html)
 You might even have them in a `~/.aws/credentials` file.
 
 _[2]_ The public key is used to allow access to OpenShift nodes for triage purposes.
 
-_[3]_ The openshiftPullSecret is how Red Hat knows you’ve got a licence to install
-OpenShift.  To obtain one, go to
-https://console.redhat.com/openshift/install/pull-secret, save the contents, and
-provide that path in the secrets file.  The contents should start with something
-like: `{"auths":{"cloud.openshift.com":{"auth":"...`.
+_[3]_ The openshiftPullSecret is how Red Hat knows you’ve got a licence to
+install OpenShift.  To obtain one, go
+[here](https://console.redhat.com/openshift/install/pull-secret), save the
+contents, and provide that path in the secrets file.  The contents should start
+with something like: `{"auths":{"cloud.openshift.com":{"auth":"...`.
 
 Obtain the login command for your cluster and run it locally.
-![console login](/images/provision/console-login.png)
+![console login](/images/console-login.png)
 
 Ensure `podman` is installed, and load the secrets with:
 
-```
+```sh
 ./common/scripts/pattern-util.sh make load-secrets
 ```
 
 These values will be used to create a number of secrets that ACM expects in
 order to provision clusters.
+
+| Loading Secrets into the Cluster |
+| ------------------------- |
+| [![Loading secrets into the cluster](https://img.youtube.com/vi/LSDUTfZvcyA/mqdefault.jpg "Loading secrets into the cluster")](https://youtu.be/LSDUTfZvcyA) |
 
 ## Define a Managed Cluster Group
 
@@ -122,7 +132,7 @@ of approximately 1000 clusters in total.
 
 The following is the example we will use today:
 
-```
+```yaml
   managedClusterGroups:
     myFirstGroup:
       name: group-one
@@ -154,8 +164,13 @@ on-demand and at scale.
 
 You can read more about cluster pools in the [ACM documentation](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.6/html/multicluster_engine/multicluster_engine_overview#managing-cluster-pools)
 
+| Defining the cluster pool | Defining clusters |
+| ------------------------- | ----------------- |
+| [![Defining and scaling the cluster pool](https://img.youtube.com/vi/FaomChtlUE4/mqdefault.jpg "Defining and scaling the cluster pool")](https://youtu.be/FaomChtlUE4) | [![Defining clusters](https://img.youtube.com/vi/IJk3vTjMPCo/mqdefault.jpg "Defining clusters")](https://youtu.be/IJk3vTjMPCo) |
+
 Each managed cluster group can have multiple pools, here is an example:
-```
+
+```yaml
       clusterPools:
         myFirstPool:
           name: aws-ap
@@ -164,7 +179,7 @@ Each managed cluster group can have multiple pools, here is an example:
           platform:
             aws:
               region: ap-southeast-2
-          size: 3
+          size: 1
           clusters:
           - tokyo
           - sydney
@@ -183,13 +198,21 @@ If `.size` is omitted, the pool will automatically resize based on the number of
 clusters specified.  Specifying no clusters will define the pool, but not
 provision any clusters.
 
+## Delivering Applications and Configuration to Clusters
 
-Here's the ACM console after waiting for the additional clusters to be
-provisioned, as well as the configured managed clusters.
+| Delivering Configuration Changes |
+| -------------------------------- |
+| [![Updating the managed cluster configuration](https://img.youtube.com/vi/oorZnch-ggY/mqdefault.jpg "Updating the managed cluster configuration")](https://youtu.be/oorZnch-ggY) |
 
-![acm console](/images/provision/acm-console.png) 
-![spoke argocd](/images/provision/spoke-argopng) 
-![spoke console](/images/provision/spoke-console.png) 
+## Deprovisioning Clusters
+
+As the provisioning data only exists on the ACM hub cluster, it is important to ensure any managed clusters are deprovisioned _before_ the hub itself is destroyed.  In general this involves scaling down the pool(s), and removing the entries in the `clusters:` list.
+
+You can see the process in action below:
+
+| Deprovisioning clusters |
+| ----------------------- |
+| [![Deprovisioning clusters](https://img.youtube.com/vi/ik5LR-ouPdo/mqdefault.jpg "Deprovisioning clusters")](https://youtu.be/ik5LR-ouPdo) |
 
 ## Conclusion
 
